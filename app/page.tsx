@@ -1,7 +1,12 @@
+import Link from "next/link";
 import React from "react";
 
 const HomePage = () => {
-  return <div>Home Page</div>;
+  return (
+    <div>
+      <div>Home Page</div>
+    </div>
+  );
 };
 
 export default HomePage;
