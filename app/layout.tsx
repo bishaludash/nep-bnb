@@ -1,8 +1,18 @@
-const MainLayout = () => {
+import React from "react";
+import "@/assets/styles/globals.css";
+interface ILayoutProps {
+  children: React.ReactNode;
+}
+
+export const metadata = {
+  title: "Nepbnb | Find the perfect rental",
+  description: "Find the perfect rental",
+};
+const MainLayout: React.FC<ILayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <div>MainLayout</div>
+        <div>{children}</div>
       </body>
     </html>
   );
