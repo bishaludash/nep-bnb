@@ -15,7 +15,7 @@ const Page = () => {
 
   return (
     <div>
-      <button onClick={() => router.push("/")} className="btn-blue-200 p-2">
+      <button onClick={() => router.push("/")} className="bg-blue-200 p-2">
         Go Home
       </button>
       <div>
