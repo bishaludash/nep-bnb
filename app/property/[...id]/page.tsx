@@ -1,7 +1,29 @@
-import React from "react";
+"use client";
+import {
+  useRouter,
+  useParams,
+  useSearchParams,
+  usePathname,
+} from "next/navigation";
 
-const page = () => {
-  return <div>Property ID</div>;
+const Page = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { id } = useParams();
+  const name = searchParams.get("name");
+
+  return (
+    <div>
+      <button onClick={() => router.push("/")} className="btn-blue-200 p-2">
+        Go Home
+      </button>
+      <div>
+        Property {id} name: {name}
+      </div>
+      <div>{pathname}</div>
+    </div>
+  );
 };
 
-export default page;
+export default Page;
