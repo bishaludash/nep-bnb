@@ -1,23 +1,26 @@
 "use client";
-import Link from "next/link";
-import React from "react";
-import { useRouter } from "next/navigation";
+import PropertyCard from "@/components/UI/PropertyCard";
+import PropertyArr from "@/properties.json";
+import { TProperties, TProperty } from "@/types/Properties";
 
 const Page = () => {
-  const router = useRouter();
+  const properties: TProperties = PropertyArr;
   return (
-    <div>
-      <div>Property Page</div>
-      <button
-        onClick={() => router.push("/")}
-        className="bg-blue-500 p-2 text-white rounded-lg mx-4"
-      >
-        Home
-      </button>
-      <Link href="/property/add">Add Property</Link>
-      <br />
-      <Link href="/property/abc">view Property abc</Link>
-    </div>
+    <>
+      <section className="px-4 py-6">
+        <div className="container-xl lg:container m-auto px-4 py-6">
+          {properties.length === 0 ? (
+            <p>No properties found</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {properties.map((property: TProperty) => (
+                <PropertyCard key={property._id} property={property} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 
