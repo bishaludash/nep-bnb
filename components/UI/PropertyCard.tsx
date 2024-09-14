@@ -27,7 +27,7 @@ const PropertyCard: React.FC<{ property: TProperty }> = ({ property }) => {
   return (
     <div className="rounded-xl shadow-md relative">
       <Image
-        src={A1}
+        src={`/images/properties/${property.images[0]}`}
         alt=""
         height={0}
         width={0}
